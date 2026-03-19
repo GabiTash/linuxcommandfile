@@ -188,6 +188,7 @@ awk 'BEGIN {OFS=" | "} {print $1, $2, $3}' data.txt - יחילף את ההפרד
 
 | חיפוש בתוך פלט של פקודה | command |  grep "text" |
 
+egrep "TEXT1|TEXT2" [FILEMAME] - מאפשר למצוא שני מילים
 
  
  
