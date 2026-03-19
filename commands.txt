@@ -132,6 +132,7 @@ etc
 EXAMPLE:
 
 ls -la | awk '{print $NF}' - יציג את המילה האחרונה בכל שורה
+ls -la | awk '{print NF}' - יציג את מספר המילים בכל שורה
 
 cat [FILEMAME] | awk '{ $2="yes" ; print $0}' - יחליף את המילה השנייה בYES ויציג את כל הורות
 
@@ -143,7 +144,17 @@ AFTER COMMAND
 moshe yes
 david yes
 
+EXAMPLE:
 
+awk 'length($0) >10' [FILE] - יציג את השורות שמספר התווים של גדול מ15
+
+EXAMPLE:
+
+ls -l | awk '{if($9 == "bob") print $0;}' - יציג את השורה אם המילה התשיעית שלה שווה ל BOB
+
+EXAMPLE: 
+
+awk 'BEGIN {OFS=" | "} {print $1, $2, $3}' data.txt - יחילף את ההפרדה בין מילה במקף
 
 
  
