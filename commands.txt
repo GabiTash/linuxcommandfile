@@ -108,6 +108,45 @@ Multiple Commands:
  
  ---------------------------------------------------
  
+ 2.
+ 
+ awk 'pattern { action }' file
+ 
+EXAMPLE:
+
+ ls -la | awk '{print $1}' - יציג את המילה הראשונה בכל שורה
+ 
+drwx-----
+lr--r--r--r
+drw-rw---
+
+EXAMPLE:
+
+cat /etc/passwd | awk -F: '{print $1}'- יציג את המילה הראשונה בכל שורה אך יפרעד בעזרת :
+
+gabi
+ssh
+mail
+etc
+
+EXAMPLE:
+
+ls -la | awk '{print $NF}' - יציג את המילה האחרונה בכל שורה
+
+cat [FILEMAME] | awk '{ $2="yes" ; print $0}' - יחליף את המילה השנייה בYES ויציג את כל הורות
+
+moshe bob
+david nono
+
+AFTER COMMAND
+
+moshe yes
+david yes
+
+
+
+
+ 
  
  
  
