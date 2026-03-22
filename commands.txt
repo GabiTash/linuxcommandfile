@@ -190,7 +190,24 @@ awk 'BEGIN {OFS=" | "} {print $1, $2, $3}' data.txt - יחילף את ההפרד
 
 egrep "TEXT1|TEXT2" [FILEMAME] - מאפשר למצוא שני מילים
 
+ ---------------------------------------------------------
  
+ sort + uniq
+ 
+ | פעולה | פקודה |
+|-------|--------|
+| מיון אלפביתי רגיל | sort file.txt |
+| מיון הפוך (Z→A) | sort -r file.txt |
+| מיון מספרי | sort -n numbers.txt |
+| מיון מספרי הפוך | sort -nr numbers.txt |
+| מיון לפי עמודה 2 | sort -k2 file.txt |
+| מיון מספרי לפי עמודה 2 | sort -k2 -n file.txt |
+| מיון לפי מפריד (למשל CSV) | sort -t',' -k3 file.csv |
+| הסרת כפילויות (חייב להיות ממוין) | sort file.txt \| uniq |
+| ספירת מופעים של כל שורה | sort file.txt \| uniq -c |
+| הצגת שורות שמופיעות פעם אחת בלבד | sort file.txt \| uniq -u |
+| הצגת שורות שמופיעות יותר מפעם אחת | sort file.txt \| uniq -d |
+| מציאת הערך שמופיע הכי הרבה | sort file.txt \| uniq -c \| sort -nr \| head |
  
  
  
