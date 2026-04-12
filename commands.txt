@@ -228,7 +228,21 @@ egrep "TEXT1|TEXT2" [FILEMAME] - מאפשר למצוא שני מילים
   
   wc -l [FILE]  -  מציג מספר שורות  
   wc -w [FILE] - מציג מספר מילים
-  wc -c [FILE] - מציג מספר מילים
+  wc -c [FILE] - מציג מספר אותיות
+  
+------------------------------------------------------------
+
+TAR -
+
+tar -cf archive.tar file1 file2 dir/    # יוצר ארכיון TAR ללא דחיסה
+tar -xf archive.tar                     # מחלץ ארכיון TAR
+tar -tf archive.tar                     # מציג את תוכן הארכיון
+tar -czf archive.tar.gz folder/         # יוצר ארכיון TAR ודוחס אותו עם gzip
+tar -xzf archive.tar.gz                 # מחלץ ארכיון tar.gz
+gzip file.txt                           # דוחס קובץ ומוחק את המקור
+gzip -k file.txt                        # דוחס קובץ ושומר את המקור
+gunzip file.txt.gz                      # פותח קובץ דחוס ומחזיר למקור
+gzip -l file.txt.gz                     # מציג מידע על הדחיסה (גודל לפני/אחרי)
  
 
  
