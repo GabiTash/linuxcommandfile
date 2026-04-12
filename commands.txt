@@ -243,6 +243,16 @@ gzip file.txt                           # דוחס קובץ ומוחק את המ
 gzip -k file.txt                        # דוחס קובץ ושומר את המקור
 gunzip file.txt.gz                      # פותח קובץ דחוס ומחזיר למקור
 gzip -l file.txt.gz                     # מציג מידע על הדחיסה (גודל לפני/אחרי)
+
+--------------------------------------------------------------
+
+TRUNCATE - 
+
+truncate -s 0 file.txt          # מאפס את הקובץ לגודל 0 (מרוקן אותו)
+truncate -s 100 file.txt        # מגדיר את גודל הקובץ ל־100 בייט
+truncate -s +50 file.txt        # מגדיל את הקובץ ב־50 בייט
+truncate -s -50 file.txt        # מקטין את הקובץ ב־50 בייט
+truncate -s 1M file.txt         # מגדיר את גודל הקובץ ל־1MB
  
 
  
