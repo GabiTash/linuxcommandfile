@@ -253,6 +253,17 @@ truncate -s 100 file.txt        # מגדיר את גודל הקובץ ל־100 ב
 truncate -s +50 file.txt        # מגדיל את הקובץ ב־50 בייט
 truncate -s -50 file.txt        # מקטין את הקובץ ב־50 בייט
 truncate -s 1M file.txt         # מגדיר את גודל הקובץ ל־1MB
+
+--------------------------------------------------------------
+
+SPLIT - 
+
+split -b 10M bigfile.bin part_        # מפצל קובץ לחלקים של 10MB כל אחד
+split -l 1000 data.txt chunk_         # מפצל קובץ טקסט לחלקים של 1000 שורות
+split -d -b 5M bigfile.bin part_      # מפצל לפי גודל עם סיומת מספרית (00, 01, 02...)
+split -a 4 -b 1M bigfile.bin seg_     # מפצל עם סיומת של 4 תווים (seg_0000, seg_0001...)
+split --verbose -b 50M backup.img out_   # מפצל ומציג הודעה על כל חלק שנוצר
+cat part_* > merged.bin               # מאחד את כל החלקים לקובץ אחד
  
 
  
