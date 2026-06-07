@@ -1,0 +1,72 @@
+useradd – יצירת משתמש חדש
+
+ארגומנטים:
+-m יצירת תיקיית בית
+-s הגדרת shell
+-d תיקיית בית מותאמת
+-u UID
+-g קבוצה ראשית
+-G קבוצות נוספות
+
+דוגמאות:
+sudo useradd gabi
+sudo useradd -m -s /bin/bash gabi
+sudo useradd -m -d /home/custom gabi
+
+
+
+groupadd – יצירת קבוצה חדשה
+
+ארגומנטים:
+-g GID
+
+דוגמאות:
+sudo groupadd admins
+sudo groupadd -g 1500 devteam
+
+
+
+userdel – מחיקת משתמש
+
+ארגומנטים:
+-r מחיקה כולל תיקיית בית
+
+דוגמאות:
+sudo userdel gabi
+sudo userdel -r gabi
+
+
+
+groupdel – מחיקת קבוצה
+
+ארגומנטים:
+(ללא)
+
+דוגמה:
+sudo groupdel admins
+
+
+
+usermod – שינוי הגדרות משתמש
+
+ארגומנטים:
+-g קבוצה ראשית
+-G קבוצות נוספות
+-aG הוספה לקבוצות נוספות
+-s שינוי shell
+-d שינוי תיקיית בית
+-l שינוי שם משתמש
+
+דוגמאות:
+sudo usermod -g admins gabi
+sudo usermod -aG docker gabi
+sudo usermod -s /bin/zsh gabi
+sudo usermod -l gabi2 gabi
+
+
+
+/etc/passwd – קובץ מידע על משתמשים
+
+/etc/group – קובץ מידע על קבוצות
+
+/etc/shadow – קובץ סיסמאות מוצפנות
