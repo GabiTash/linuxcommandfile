@@ -264,6 +264,29 @@ split -d -b 5M bigfile.bin part_      # מפצל לפי גודל עם סיומת
 split -a 4 -b 1M bigfile.bin seg_     # מפצל עם סיומת של 4 תווים (seg_0000, seg_0001...)
 split --verbose -b 50M backup.img out_   # מפצל ומציג הודעה על כל חלק שנוצר
 cat part_* > merged.bin               # מאחד את כל החלקים לקובץ אחד
+
+------------------------------------------------------------------
+
+SED - 
+
+sed 's/old/new/' file.txt - מחליף את ההופעה הראשונה של "old" בכל שורה.
+sed 's/old/new/g' file.txt - מחליף את כל ההופעות של "old" בכל שורה.
+sed -i 's/old/new/g' file.txt - מחליף ושומר את השינויים ישירות בקובץ.
+
+sed '/delete this line/d' file.txt - מוחק כל שורה שמכילה את הטקסט "delete this line".
+
+sed '/^$/d' file.txt - מוחק שורות ריקות בקובץ.
+
+sed '1d' file.txt - מוחק את השורה הראשונה בקובץ.
+sed '1,5d' file.txt - מוחק את השורות 1 עד 5.
+
+sed 's/\t/    /g' file.txt - מחליף טאבים בארבעה רווחים.
+
+sed -n '10,20p' file.txt - מציג רק את השורות 10 עד 20.
+sed -n '/error/p' file.txt - מציג רק שורות שמכילות את המילה "error".
+
+:%s/old/new/g - בתוך עורך vi: מחליף את כל ההופעות של "old" ב־"new".
+
  
 
  
